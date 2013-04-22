@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>jPushMenu, jQuery version of Slide and Push Menus</title>
+		<meta name="description" content="jPushMenu, Slide and Push Menus" />
+		<meta name="keywords" content="sliding menu, pushing menu, navigation, responsive, menu, css, jquery, mobile menu" />
+		
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		
+		<!--load jPushMenu.css, required-->
+		<link rel="stylesheet" type="text/css" href="css/jPushMenu.css" />
+	</head>
+	<body>
+		<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
+			<h3>Menu</h3>
+			<a href="#">Celery seakale</a>
+			<a href="#">Dulse daikon</a>
+			<a href="#">Zucchini garlic</a>
+			<a href="#">Catsear azuki bean</a>
+			<a href="#">Dandelion bunya</a>
+			<a href="#">Rutabaga</a>
+		</nav>
+		<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
+			<h3>Menu</h3>
+			<a href="#">Celery seakale</a>
+			<a href="#">Dulse daikon</a>
+			<a href="#">Zucchini garlic</a>
+			<a href="#">Catsear azuki bean</a>
+			<a href="#">Dandelion bunya</a>
+			<a href="#">Rutabaga</a>
+		</nav>
+		<nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-top">
+			<h3>Menu</h3>
+			<a href="#">Celery seakale</a>
+			<a href="#">Dulse daikon</a>
+			<a href="#">Zucchini garlic</a>
+			<a href="#">Catsear azuki bean</a>
+			<a href="#">Dandelion bunya</a>
+			<a href="#">Rutabaga</a>
+			<a href="#">Celery seakale</a>
+			<a href="#">Dulse daikon</a>
+			<a href="#">Zucchini garlic</a>
+			<a href="#">Catsear azuki bean</a>
+			<a href="#">Dandelion bunya</a>
+			<a href="#">Rutabaga</a>
+		</nav>
+		<nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-bottom">
+			<h3>Menu</h3>
+			<a href="#">Celery seakale</a>
+			<a href="#">Dulse daikon</a>
+			<a href="#">Zucchini garlic</a>
+			<a href="#">Catsear azuki bean</a>
+			<a href="#">Dandelion bunya</a>
+			<a href="#">Rutabaga</a>
+			<a href="#">Celery seakale</a>
+			<a href="#">Dulse daikon</a>
+			<a href="#">Zucchini garlic</a>
+			<a href="#">Catsear azuki bean</a>
+			<a href="#">Dandelion bunya</a>
+			<a href="#">Rutabaga</a>
+		</nav>
+		<div class="container">
+			<header class="clearfix">
+				<h1>jPushMenu</h1>
+				
+				<p>A jQuery version of <strong>Slide and Push Menus</strong> by <a target="_blank" href="http://tympanus.net/codrops/?p=14725">Mary Lou</a></p>
+				
+				 <ul class="quick-links">
+		<li class="fb-btn">
+		<fb:like layout="button_count" send="false" href="http://takien.github.io/jPushMenu/"></fb:like>
+		</li>
+		  <li class="follow-btn">
+			<a href="https://twitter.com/cektkp" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @cektkp</a>
+		  </li>
+		  <li class="tweet-btn">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://takien.github.io/jPushMenu/" data-count="horizontal" data-via="cektkp" data-related="cektkp:Creator of jPushMenu.js">Tweet</a>
+		  </li>
+		  <li class="gplus-btn">
+			<g:plusone url="http://takien.github.io/jPushMenu/" size="medium"></g:plusone>
+		   </li>
+		</ul><!--quick-links-->
+		
+			</header>
+			<div class="main">
+				<section>
+					<h2>jPushMenu Demo</h2>
+					<p>Click button to show/hide menu</p>
+					
+					<button class="toggle-menu menu-left">Toggle Left Menu</button>
+					<button class="toggle-menu menu-left push-body">Toggle Left Menu Push</button>
+					
+					<button class="toggle-menu menu-right">Toggle Right Menu</button>
+					<button class="toggle-menu menu-right push-body">Toggle Right Menu Push</button>
+					
+					<button class="toggle-menu menu-top">Toggle Top Menu</button>
+					<button class="toggle-menu menu-bottom">Toggle Bottom Menu</button>
+					
+					
+				</section>
+				<section>
+					<h2>How to use?</h2>
+<h3>Include required style</h3>
+<textarea class="code">
+<link rel="stylesheet" type="text/css" href="css/jPushMenu.css" />
+</textarea>			
+<h3>Include required script</h3>					
+<textarea class="code"><!--load jQuery, required-->
+<script src="js/jquery-1.9.1.min.js"></script>
+<!--load jPushMenu, required-->
+<script src="js/jPushMenu.js"></script>
+
+<!--call jPushMenu, required-->
+<script>
+jQuery(document).ready(function($) {
+	$('.toggle-menu').jPushMenu();
+});
+</script>
+		
+</textarea>
+<h3>Make button or link</h3>
+<p>The class names are self explained.</p>
+<textarea class="code">
+<button class="toggle-menu menu-left">Toggle Left Menu</button>
+<button class="toggle-menu menu-left push-body">Toggle Left Menu Push</button>
+
+<button class="toggle-menu menu-right">Toggle Right Menu</button>
+<button class="toggle-menu menu-right push-body">Toggle Right Menu Push</button>
+
+<button class="toggle-menu menu-top">Toggle Top Menu</button>
+<button class="toggle-menu menu-bottom">Toggle Bottom Menu</button>
+</textarea>
+
+<h3>Make menu element</h3>					
+<p>Element IDs should be anything, but must be match with data-target attribute on the button above.</p>
+<textarea class="code">
+<!-- Left menu element-->
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
+	<h3>Menu</h3>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+</nav>
+<!-- Right menu element-->
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
+	<h3>Menu</h3>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+</nav>
+<!-- Top menu element-->
+<nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-top">
+	<h3>Menu</h3>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+</nav>
+<!-- Bottom menu element-->
+<nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-bottom">
+	<h3>Menu</h3>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+</nav>
+
+</textarea>
+				</section>
+				
+			</div>
+		
+		
+			<footer>
+			&copy; 2013 -  <a target="_blank" href="http://takien.com">takien.com</a>
+			</footer>
+		</div>
+		
+		<a target="_blank" href="https://github.com/takien/jPushMenu"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+		
+		<!--load jQuery, required-->
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<!--load jPushMenu, required-->
+		<script src="js/jPushMenu.js"></script>
+		
+		<!--call jPushMenu, required-->
+		<script>
+		jQuery(document).ready(function($) {
+			$('.toggle-menu').jPushMenu();
+		});
+		</script>
+		
+		<!--for docs purpose only :p-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=394280927787";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	</body>
+</html>

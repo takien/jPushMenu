@@ -1,0 +1,174 @@
+/* General Demo Style
+ * Most likely you don't have to include this css too.
+ */
+
+body, html { font-size: 100%; 	padding: 0; margin: 0;}
+
+/* Reset */
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+body {
+    font-family: Calibri, Arial, sans-serif;
+    color: #47a3da;
+
+}
+
+a {
+	color: #868686;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000;
+}
+
+.main,
+.container > header ,
+.container > footer {
+	width: 90%;
+	max-width: 69em;
+	margin: 0 auto;
+	padding: 0 1.875em 3.125em 1.875em;
+}
+
+.container > header {
+	padding: 2.875em 1.875em 1.875em;
+}
+
+.container > header h1 {
+	font-size: 2.125em;
+	line-height: 1.3;
+	margin: 0;
+	font-weight: 400;
+}
+
+.container > header span {
+	display: block;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5em;
+	padding: 0 0 0.6em 0.1em;
+}
+
+.container > header nav {
+	float: right;
+}
+
+.container > header nav a {
+	display: block;
+	float: left;
+	position: relative;
+	width: 2.5em;
+	height: 2.5em;
+	background: #fff;
+	border-radius: 50%;
+	color: transparent;
+	margin: 0 0.1em;
+	border: 4px solid #47a3da;
+	text-indent: -8000px;
+}
+
+.container > header nav a:after {
+	content: attr(data-info);
+	color: #47a3da;
+	position: absolute;
+	width: 600%;
+	top: 120%;
+	text-align: right;
+	right: 0;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.container > header nav a:hover:after {
+	opacity: 1;
+}
+
+.container > header nav a:hover {
+	background: #47a3da;
+}
+
+.main > section {
+}
+
+.main > section h2 {
+	font-weight: 300;
+	color: #ccc;
+}
+
+.main > section button {
+	border: none;
+	background: #47a3da;
+	color: #fff;
+	padding: 1.5em;
+	cursor: pointer;
+	margin: 10px 0;
+	font-size: 0.8em;
+}
+
+.main > section button:hover {
+	background: #258ecd;
+}
+
+.main > section button.active {
+	background: #0d77b6;
+}
+
+.main > section button.disabled {
+	background: #aaa;
+	pointer-events: none;
+}
+
+.container > header nav a:hover:before {
+	color: #fff;
+}
+
+textarea.code {
+	width:100%;
+	min-height:150px
+}
+footer {
+	text-align:center
+}
+
+.quick-links {
+  min-height: 30px;
+  margin: 30px 0 0 0;
+  padding: 5px 20px;
+  list-style: none;
+  text-align: center;
+  overflow: hidden;
+}
+.quick-links:first-child {
+  min-height: 0;
+}
+.quick-links li {
+  display: inline;
+  margin: 0 8px;
+  color: #999;
+}
+.quick-links .github-btn,
+.quick-links .tweet-btn,
+.quick-links .follow-btn,
+.quick-links .gplus-btn,
+.quick-links .fb-btn {
+  position: relative;
+  top: 5px;
+}
