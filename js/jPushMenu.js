@@ -1,6 +1,6 @@
 /*!
  * jPushMenu.js
- * 1.0
+ * 1.1
  * @author: takien
  * http://takien.com
  * Original version (pure JS) is created by Mary Lou http://tympanus.net/
@@ -19,8 +19,7 @@
 			var target         = '',
 			push_direction     = '';
 			
-			//$(this).removeClass('jPushMenuBtn');
-			
+		
 			if($(this).is('.'+o.showLeftClass)) {
 				target         = '.cbp-spmenu-left';
 				push_direction = 'toright';
@@ -45,11 +44,24 @@
 			}
 			
 			/* disable all other button*/
-			//$('.jPushMenuBtn.disabled').removeClass('disabled');
 			$('.jPushMenuBtn').not($(this)).toggleClass('disabled');
 			
-			
 		});
+		var jPushMenu = {
+			close: function (o) {
+				$('.jPushMenuBtn,body,.cbp-spmenu').removeClass('disabled active cbp-spmenu-open cbp-spmenu-push-toleft cbp-spmenu-push-toright');
+			}
+		}
+		
+		if(o.closeOnClickOutside) {
+			 $(document).click(function() { 
+				jPushMenu.close();
+			 }); 
+
+			 $('.cbp-spmenu,.toggle-menu').click(function(e){ 
+				 e.stopPropagation(); 
+			 });
+		 }
 	};
  
    /* in case you want to customize class name,
@@ -63,6 +75,7 @@
 		showTopClass    : 'menu-top',
 		showBottomClass : 'menu-bottom',
 		menuOpenClass   : 'cbp-spmenu-open',
-		pushBodyClass   : 'push-body'
+		pushBodyClass   : 'push-body',
+		closeOnClickOutside: true
 	};
 })(jQuery);
