@@ -1,6 +1,6 @@
 /*!
  * jPushMenu.js
- * 1.1
+ * 1.1.1
  * @author: takien
  * http://takien.com
  * Original version (pure JS) is created by Mary Lou http://tympanus.net/
@@ -46,6 +46,7 @@
 			/* disable all other button*/
 			$('.jPushMenuBtn').not($(this)).toggleClass('disabled');
 			
+			return false;
 		});
 		var jPushMenu = {
 			close: function (o) {
