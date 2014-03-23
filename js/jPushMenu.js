@@ -73,6 +73,13 @@
 				 e.stopPropagation(); 
 			 });
 		 }
+
+        // On Click Link
+        if(o.closeOnClickLink) {
+            $('.cbp-spmenu a').on('click',function(){
+                jPushMenu.close();
+            });
+        }
 	};
  
    /* in case you want to customize class name,
@@ -88,6 +95,7 @@
 		menuOpenClass   : 'cbp-spmenu-open',
 		pushBodyClass   : 'push-body',
 		closeOnClickOutside: true,
-		closeOnClickInside: true
+		closeOnClickInside: true,
+		closeOnClickLink: true
 	};
 })(jQuery);
