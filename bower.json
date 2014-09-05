@@ -4,10 +4,14 @@
   "version": "1.1.1",
   "keywords": [
     "js",
-    "menus",
+    "css",
+    "menu",
     "jQuery",
-    "slide menus",
-    "push menus"
+    "sliding menus",
+    "pushing menus",
+    "navigation",
+    "responsive",
+    "mobile menu"
   ],
   "homepage": "http://takien.github.io/jPushMenu/",
   "main": [
