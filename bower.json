@@ -1,0 +1,25 @@
+{
+  "name": "jPushMenu",
+  "description": "A jQuery version of Slide and Push Menus.",
+  "version": "1.1.1",
+  "keywords": [
+    "js",
+    "menus",
+    "jQuery",
+    "slide menus",
+    "push menus"
+  ],
+  "homepage": "http://takien.github.io/jPushMenu/",
+  "main": [
+    "css/jPushMenu.css",
+    "js/jPushMenu.js"
+  ],
+  "ignore": [
+    "/.*",
+    "/css/demo.css",
+    "/index.html"
+  ],
+  "dependencies": {
+    "jQuery": "~1.9.1"
+  }
+}
