@@ -7,95 +7,88 @@
  */
 
 (function($) {
-		
-	$.fn.jPushMenu = function(customOptions) {
-		var o = $.extend({}, $.fn.jPushMenu.defaultOptions, customOptions);
-		
-		/* add class to the body.*/
-		
-		$('body').addClass(o.bodyClass);
-		$(this).addClass('jPushMenuBtn');
-		$(this).click(function() {
-			var target         = '',
-			push_direction     = '';
-			
-		
-			if($(this).is('.'+o.showLeftClass)) {
-				target         = '.cbp-spmenu-left';
-				push_direction = 'toright';
-			}
-			else if($(this).is('.'+o.showRightClass)) {
-				target         = '.cbp-spmenu-right';
-				push_direction = 'toleft';
-			}
-			else if($(this).is('.'+o.showTopClass)) {
-				target         = '.cbp-spmenu-top';
-			}
-			else if($(this).is('.'+o.showBottomClass)) {
-				target         = '.cbp-spmenu-bottom';
-			}
-			
+    $.fn.jPushMenu = function(customOptions) {
+        var o = $.extend({}, $.fn.jPushMenu.defaultOptions, customOptions);
 
-			$(this).toggleClass(o.activeClass);
-			$(target).toggleClass(o.menuOpenClass);
-			
-			if($(this).is('.'+o.pushBodyClass)) {
-				$('body').toggleClass( 'cbp-spmenu-push-'+push_direction );
-			}
-			
-			/* disable all other button*/
-			$('.jPushMenuBtn').not($(this)).toggleClass('disabled');
-			
-			return false;
-		});
-		var jPushMenu = {
-			close: function (o) {
-				$('.jPushMenuBtn,body,.cbp-spmenu').removeClass('disabled active cbp-spmenu-open cbp-spmenu-push-toleft cbp-spmenu-push-toright');
-			}
-		}
+        $('body').addClass(o.pushBodyClass);
 
-    if(o.closeOnClickInside) {
-       $(document).click(function() {
-          jPushMenu.close();
+        // Add class to toggler
+        $(this).addClass('jPushMenuBtn');
+
+        $(this).click(function(e) {
+            e.stopPropagation();
+
+            var target     = '',
+            push_direction = '';
+
+            // Determine menu and push direction
+            if ($(this).is('.' + o.showLeftClass)) {
+                target         = '.cbp-spmenu-left';
+                push_direction = 'toright';
+            }
+            else if ($(this).is('.' + o.showRightClass)) {
+                target         = '.cbp-spmenu-right';
+                push_direction = 'toleft';
+            }
+            else if ($(this).is('.' + o.showTopClass)) {
+                target = '.cbp-spmenu-top';
+            }
+            else if ($(this).is('.' + o.showBottomClass)) {
+                target = '.cbp-spmenu-bottom';
+            }
+
+            if (target == '') {
+                return;
+            }
+
+            $(this).toggleClass(o.activeClass);
+            $(target).toggleClass(o.menuOpenClass);
+
+            if ($(this).is('.' + o.pushBodyClass) && push_direction != '') {
+                $('body').toggleClass(o.pushBodyClass + '-' + push_direction);
+            }
+
+            // Disable all other buttons
+            $('.jPushMenuBtn').not($(this)).toggleClass('disabled');
+
+            return;
         });
 
-       $('.cbp-spmenu,.toggle-menu').click(function(e){
-         e.stopPropagation();
-       });
-    }
-		
-		if(o.closeOnClickOutside) {
-			 $(document).click(function() { 
-				jPushMenu.close();
-			 }); 
+        var jPushMenu = {
+            close: function (o) {
+                $('.jPushMenuBtn,body,.cbp-spmenu')
+                    .removeClass('disabled ' + o.activeClass + ' ' + o.menuOpenClass + ' ' + o.pushBodyClass + '-toleft ' + o.pushBodyClass + '-toright');
+            }
+        }
 
-			 $('.cbp-spmenu,.toggle-menu').click(function(e){ 
-				 e.stopPropagation(); 
-			 });
-		 }
+        // Close menu on clicking outside menu
+        if (o.closeOnClickOutside) {
+             $(document).click(function() {
+                jPushMenu.close(o);
+             });
+         }
 
-        // On Click Link
-        if(o.closeOnClickLink) {
-            $('.cbp-spmenu a').on('click',function(){
-                jPushMenu.close();
+        // Close menu on clicking menu link
+        if (o.closeOnClickLink) {
+            $('.cbp-spmenu a').on('click',function() {
+                jPushMenu.close(o);
             });
         }
-	};
- 
-   /* in case you want to customize class name,
-   *  do not directly edit here, use function parameter when call jPushMenu.
-   */
-	$.fn.jPushMenu.defaultOptions = {
-		bodyClass       : 'cbp-spmenu-push',
-		activeClass     : 'menu-active',
-		showLeftClass   : 'menu-left',
-		showRightClass  : 'menu-right',
-		showTopClass    : 'menu-top',
-		showBottomClass : 'menu-bottom',
-		menuOpenClass   : 'cbp-spmenu-open',
-		pushBodyClass   : 'push-body',
-		closeOnClickOutside: true,
-		closeOnClickInside: true,
-		closeOnClickLink: true
-	};
+    };
+
+   /*
+    * In case you want to customize class name,
+    * do not directly edit here, use function parameter when call jPushMenu.
+    */
+    $.fn.jPushMenu.defaultOptions = {
+        pushBodyClass      : 'push-body',
+        showLeftClass      : 'menu-left',
+        showRightClass     : 'menu-right',
+        showTopClass       : 'menu-top',
+        showBottomClass    : 'menu-bottom',
+        activeClass        : 'menu-active',
+        menuOpenClass      : 'menu-open',
+        closeOnClickOutside: true,
+        closeOnClickLink   : true
+    };
 })(jQuery);
