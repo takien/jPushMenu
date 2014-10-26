@@ -9,6 +9,9 @@ Demo http://takien.github.io/jPushMenu/
 
 Install [Bower](http://bower.io) on your local machine first, then run:
 
-`bower install`
+```sh
+bower install
+```
 
-This will install jQuery on your local machine.
+This will install jQuery on `bower_components` directory on your local machine.
+Copy/paste jQuery file into js directory
