@@ -63,10 +63,13 @@
 
         // Close menu on clicking outside menu
         if (o.closeOnClickOutside) {
-             $(document).click(function() {
-                jPushMenu.close(o);
-             });
-         }
+            $(document).on('click', function() {
+                jPushMenu.close(o);       
+            });
+            $(".cbp-spmenu").on('click', function(e) {
+                e.stopPropagation();
+            });
+        }
 
         // Close menu on clicking menu link
         if (o.closeOnClickLink) {
