@@ -63,8 +63,10 @@
 
         // Close menu on clicking outside menu
         if (o.closeOnClickOutside) {
-             $(document).click(function() {
-                jPushMenu.close(o);
+             $(document).click(function(e) {
+                if (!$(e.target).closest('.cbp-spmenu').length && $('.cbp-spmenu').is('.' + o.menuOpenClass)) {
+                    jPushMenu.close(o);
+                }
              });
          }
 
