@@ -1,0 +1,26 @@
+{
+  "name": "jpushmenu",
+  "version": "1.1.1",
+  "description": "A jQuery version of Slide and Push Menus.",
+  "keywords": [
+    "js",
+    "css",
+    "menu",
+    "jQuery",
+    "sliding menus",
+    "pushing menus",
+    "navigation",
+    "responsive",
+    "mobile menu"
+  ],
+  "main": "js/jPushMenu.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takien/jPushMenu.git"
+  },
+  "author": "takien",
+  "bugs": {
+    "url": "https://github.com/takien/jPushMenu/issues"
+  },
+  "homepage": "http://takien.github.io/jPushMenu/"
+}
