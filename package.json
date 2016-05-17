@@ -13,10 +13,7 @@
     "responsive",
     "mobile menu"
   ],
-  "main": [
-    "css/jPushMenu.css",
-    "js/jPushMenu.js"
-  ],
+  "main": "js/jPushMenu.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/takien/jPushMenu.git"
