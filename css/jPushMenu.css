@@ -104,6 +104,7 @@
     overflow-x: hidden;
     position: relative;
     left: 0;
+    top: 0;
 }
 
 .push-body-toright {
