@@ -1,6 +1,6 @@
 /*!
  * jPushMenu.js
- * 1.2.0
+ * 1.2.1
  * @author: takien
  * http://takien.com
  * Original version (pure JS) is created by Mary Lou http://tympanus.net/
@@ -32,6 +32,7 @@
             }
             else if ($(this).is('.' + o.showTopClass)) {
                 target = '.cbp-spmenu-top';
+                push_direction = 'tobottom';
             }
             else if ($(this).is('.' + o.showBottomClass)) {
                 target = '.cbp-spmenu-bottom';
@@ -43,6 +44,9 @@
 
             $(this).toggleClass(o.activeClass);
             $(target).toggleClass(o.menuOpenClass);
+
+            // Add the same height to the animation of push-menu to bottom
+            $('.' + o.showTopClass).css('top', $(target).height());
 
             if ($(this).is('.' + o.pushBodyClass) && push_direction != '') {
                 $('body').toggleClass(o.pushBodyClass + '-' + push_direction);
@@ -57,7 +61,7 @@
         var jPushMenu = {
             close: function (o) {
                 $('.jPushMenuBtn,body,.cbp-spmenu')
-                    .removeClass('disabled ' + o.activeClass + ' ' + o.menuOpenClass + ' ' + o.pushBodyClass + '-toleft ' + o.pushBodyClass + '-toright');
+                    .removeClass('disabled ' + o.activeClass + ' ' + o.menuOpenClass + ' ' + o.pushBodyClass + '-toleft ' + o.pushBodyClass + '-toright ' + o.pushBodyClass + '-tobottom');
             }
         }
 
@@ -88,7 +92,7 @@
         }
     };
 
-   /*
+     /*
     * In case you want to customize class name,
     * do not directly edit here, use function parameter when call jPushMenu.
     */
