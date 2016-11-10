@@ -46,7 +46,7 @@
             $(target).toggleClass(o.menuOpenClass);
 
             // Add the same height to the animation of push-menu to bottom
-            $('.' + o.showTopClass).css('top', $(target).height());
+            $(o.pushBodyClass + '-' + push_direction).css('top', $(target).height());
 
             if ($(this).is('.' + o.pushBodyClass) && push_direction != '') {
                 $('body').toggleClass(o.pushBodyClass + '-' + push_direction);
